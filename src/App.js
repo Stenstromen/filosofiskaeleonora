@@ -10,11 +10,15 @@ function App() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    return window.innerWidth < 425 ? setIsMobile(true) : setIsMobile(false);
+  }, []);
+
+  useEffect(() => {
     return window.addEventListener("resize", () => {
       window.innerWidth < 425 ? setIsMobile(true) : setIsMobile(false);
     });
   }, []);
-  
+
   return (
     <div
       style={{
