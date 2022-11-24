@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import pusheen from "./img/pusheen.webp";
@@ -6,6 +7,14 @@ import All from "./pages/All";
 import "./App.css";
 
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    return window.addEventListener("resize", () => {
+      window.innerWidth < 425 ? setIsMobile(true) : setIsMobile(false);
+    });
+  }, []);
+  
   return (
     <div
       style={{
@@ -17,8 +26,9 @@ function App() {
       }}
     >
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/add" element={<All />} />
+        <Route path="/" element={<Home isMobile={isMobile} />} />
+        <Route path="/:id" element={<Home isMobile={isMobile} />} />
+        <Route path="/all" element={<All isMobile={isMobile} />} />
       </Routes>
     </div>
   );
