@@ -9,6 +9,11 @@ const Quotes = [
         quote: "Du ska fan inte tro att du är fri, dessutom ska du betala för det också",
         date: "2021-?-??"
     },
+    {
+        id:3,
+        quote: "Hur kan man veta, vad någonting är?",
+        date: "2022-12-13"
+    },
 ]
 
 export default Quotes;
