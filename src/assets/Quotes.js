@@ -14,6 +14,16 @@ const Quotes = [
         quote: "Hur kan man veta, vad någonting är?",
         date: "2022-12-13"
     },
+    {
+        id:4,
+        quote: "Varje reklam har budskapet: 'Be a cheep, be a cheep'",
+        date: "2022-12-17"
+    },
+    {
+        id:5,
+        quote: "Många människor är 'nej man får inte säga så', men jag är: hehe, I'm sayin it",
+        date: "2022-12-17"
+    }
 ]
 
 export default Quotes;
