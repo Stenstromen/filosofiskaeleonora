@@ -23,6 +23,11 @@ const Quotes = [
         id:5,
         quote: "Många människor är 'nej man får inte säga så', men jag är: hehe, I'm sayin it",
         date: "2022-12-17"
+    },
+    {
+        id:6,
+        quote: "Typescript är som att ta hostmedicin, ett onödigt ont",
+        date: "2022-12-19"
     }
 ]
 
