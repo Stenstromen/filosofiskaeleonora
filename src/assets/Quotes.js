@@ -28,6 +28,11 @@ const Quotes = [
         id:6,
         quote: "Typescript är som att ta hostmedicin, ett onödigt ont",
         date: "2022-12-19"
+    },
+    {
+        id:7,
+        quote: Om man aldrig failar, lär man sig ingenting,
+        date: "2022-12-20"
     }
 ]
 
