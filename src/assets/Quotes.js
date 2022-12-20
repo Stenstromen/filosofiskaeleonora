@@ -31,7 +31,7 @@ const Quotes = [
     },
     {
         id:7,
-        quote: Om man aldrig failar, lär man sig ingenting,
+        quote: "Om man aldrig failar, lär man sig ingenting",
         date: "2022-12-20"
     }
 ]
