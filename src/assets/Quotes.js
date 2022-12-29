@@ -33,7 +33,12 @@ const Quotes = [
         id:7,
         quote: "Om man aldrig failar, lär man sig ingenting",
         date: "2022-12-20"
-    }
+    },
+    {
+        id:8,
+        quote: "Är du gammal nog att retas, är du gammal nog att åka till akuten",
+        date: "2022-12-29"
+    },
 ]
 
 export default Quotes;
