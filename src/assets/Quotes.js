@@ -41,7 +41,7 @@ const Quotes = [
     },
     {
         id:9,
-        quote: "I took the Red Pill, but now I have to live the Blue Pill life.",
+        quote: "I took the Red Pill, but now I have to live the Blue Pill life",
         date: "2023-01-23"
     },
 ]
