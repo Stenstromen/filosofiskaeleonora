@@ -25,6 +25,7 @@ function App() {
         backgroundImage: `url(${pusheen})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        backgroundPosition: isMobile ? "40% 75%" : null,
         height: "100vh",
         width: "100vw",
       }}
