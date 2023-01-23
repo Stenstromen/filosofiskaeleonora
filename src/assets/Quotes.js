@@ -26,7 +26,7 @@ const Quotes = [
     },
     {
         id:6,
-        quote: "Typescript är som att ta hostmedicin, ett onödigt ont",
+        quote: "Typescript är som att ta hostmedicin, ett nödvändigt ont",
         date: "2022-12-19"
     },
     {
