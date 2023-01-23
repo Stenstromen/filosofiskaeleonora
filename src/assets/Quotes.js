@@ -39,6 +39,11 @@ const Quotes = [
         quote: "Är du gammal nog att retas, är du gammal nog att åka till akuten",
         date: "2022-12-29"
     },
+    {
+        id:9,
+        quote: "I took the Red Pill, but now I have to live the Blue Pill life.",
+        date: "2023-01-23"
+    },
 ]
 
 export default Quotes;
