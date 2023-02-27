@@ -44,6 +44,11 @@ const Quotes = [
         quote: "I took the Red Pill, but now I have to live the Blue Pill life",
         date: "2023-01-23"
     },
+    {
+        id:10,
+        quote: "-90px, jag är en Front-End terrorist!",
+        date: "2023-02-27"
+    }
 ]
 
 export default Quotes;
