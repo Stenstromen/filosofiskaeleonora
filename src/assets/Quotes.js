@@ -46,7 +46,7 @@ const Quotes = [
     },
     {
         id:10,
-        quote: "-90px, jag är en Front-End terrorist!",
+        quote: "-130px marginRight, jag är en Front-End terrorist!",
         date: "2023-02-27"
     }
 ]
