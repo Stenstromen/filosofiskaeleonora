@@ -53,6 +53,11 @@ const Quotes = [
         id:11,
         quote: "Det är jobbigt att vara filosof",
         date: "2023-04-16"
+    },
+    {
+        id: 12,
+        quote: "Jag tänker inte ens kissa om jag ser dem brinna",
+        date: "2023-05-12"
     }
 ]
 
