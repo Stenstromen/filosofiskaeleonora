@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Stack from "react-bootstrap/Stack";
 import Quotes from "../assets/Quotes";
 
@@ -18,10 +19,10 @@ function Home(isMobile) {
 
   return (
     <div>
-      {quote.map((item) => {
+      {quote?.map((item) => {
         return (
           <Stack
-            key={item.id}
+            key={item?.id}
             style={{
               paddingTop: isMobile.isMobile ? "25%" : "12%",
               width: isMobile.isMobile ? "390px" : "50vw",
@@ -32,11 +33,15 @@ function Home(isMobile) {
           >
             <h1>
               <strong>
-                <em>{item.quote}</em>
+                <em>{item?.quote}</em>
               </strong>
             </h1>
           </Stack>
         );
+      })}
+      <Link to="/all"></Link>
+      {Quotes.map((item) => {
+        return <Link key={item.id} to={`/${item.id}`}></Link>;
       })}
     </div>
   );
