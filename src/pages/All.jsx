@@ -2,19 +2,11 @@ import Stack from "react-bootstrap/Stack";
 import Table from "react-bootstrap/Table";
 import Quotes from "../assets/Quotes";
 
-function All(isMobile) {
+function All() {
   return (
     <div>
-      <Stack
-        style={{
-          paddingTop: isMobile.isMobile ? "10%" : "10%",
-          width: isMobile.isMobile ? "390px" : "50vw",
-        }}
-        className="col-md-5 mx-auto"
-        direction="horizontal"
-        gap={3}
-      >
-        <Table striped bordered hover style={{ backgroundColor: "white" }}>
+      <Stack className="all col-md-5 mx-auto" direction="horizontal" gap={3}>
+        <Table striped bordered hover variant="dark">
           <thead>
             <tr>
               <th>#</th>
@@ -23,12 +15,12 @@ function All(isMobile) {
             </tr>
           </thead>
           <tbody>
-            {Quotes.map((item) => {
+            {Quotes.map(({ id, quote, date }) => {
               return (
-                <tr key={item.id}>
-                  <td>{item.id}</td>
-                  <td>{item.quote}</td>
-                  <td>{item.date}</td>
+                <tr key={id}>
+                  <td>{id}</td>
+                  <td>{quote}</td>
+                  <td>{date}</td>
                 </tr>
               );
             })}
