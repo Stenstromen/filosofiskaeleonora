@@ -64,7 +64,7 @@ const Quotes = [
   {
     id: 13,
     quote:
-      "Om du ska pissa på mig, kan du väll åtminstone torka av mig efteråt?",
+      "Om du ska pissa på mig, kan du väl åtminstone torka av mig efteråt?",
     date: "2023-05-26",
   },
 ];
