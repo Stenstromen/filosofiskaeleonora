@@ -61,6 +61,12 @@ const Quotes = [
     quote: "Jag tänker inte ens kissa om jag ser dem brinna",
     date: "2023-05-12",
   },
+  {
+    id: 13,
+    quote:
+      "Om du ska pissa på mig, kan du väll åtminstone torka av mig efteråt?",
+    date: "2023-05-26",
+  },
 ];
 
 export default Quotes;
