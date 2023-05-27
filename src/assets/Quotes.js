@@ -67,6 +67,11 @@ const Quotes = [
       "Om du ska pissa på mig, kan du väl åtminstone torka av mig efteråt?",
     date: "2023-05-26",
   },
+  {
+    id: 14,
+    quote: "Morgonen börjar vid nio, sju på morgonen är mitt i natten",
+    date: "2023-05-27",
+  },
 ];
 
 export default Quotes;
