@@ -72,6 +72,11 @@ const Quotes = [
     quote: "Morgonen börjar vid nio, sju på morgonen är mitt i natten",
     date: "2023-05-27",
   },
+  {
+    id: 15,
+    quote: "De ville ha en unicorn, men jag kanske kan leverera en pony",
+    date: "2023-06-17"
+  }
 ];
 
 export default Quotes;
