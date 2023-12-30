@@ -81,7 +81,12 @@ const Quotes = [
     id: 16,
     quote: "Allt ska vara som en mikrodos nuförtiden. En line of code ska göra en hel applikation",
     date: "2023-06-20"
-  }
+  },
+  {
+    id: 17,
+    quote: "GIT-pulla din skit nu!",
+    date: "2023-12-29"
+  },
 ];
 
 export default Quotes;
