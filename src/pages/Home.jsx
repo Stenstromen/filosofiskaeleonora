@@ -1,49 +1,68 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Stack from "react-bootstrap/Stack";
 import Quotes from "../assets/Quotes";
 
 function Home() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [quote, setQuote] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isValidId, setIsValidId] = useState(true);
 
   useEffect(() => {
+    let singleQuote;
+
     if (id) {
-      const singleQuote = Quotes.find((item) => item.id === parseInt(id));
-      return setQuote((quote) => [...quote, singleQuote]);
+      singleQuote = Quotes.find((item) => item.id === parseInt(id));
+      setIsValidId(!!singleQuote);
+    } else {
+      const randomNum = Math.floor(Quotes.length * Math.random());
+      singleQuote = Quotes[randomNum];
     }
-    const randomNum = Math.floor(Quotes.length * Math.random());
-    return setQuote((quote) => [...quote, Quotes[randomNum]]);
+
+    if (singleQuote) setQuote([singleQuote]);
+
+    setIsLoading(false);
   }, [id]);
+
+  useEffect(() => {
+    if (!isLoading && !isValidId) {
+      navigate("/");
+    }
+  }, [isLoading, isValidId, navigate]);
+
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>
-      {quote &&
-        quote.map((item) => {
-          if (item) {
-            return (
-              <Stack
-                key={item.id}
-                className="home col-md-5 mx-auto"
-                direction="horizontal"
-                gap={3}
-              >
-                <h1>
-                  <strong>
-                    <em>{item.quote}</em>
-                  </strong>
-                </h1>
-              </Stack>
-            );
-          } else {
-            return null;
-          }
-        })}
-
-      <Link to="/all"></Link>
+      {quote.map(({ id, quote }) => {
+        const stringId = id.toString();
+        return (
+          <>
+            <Helmet>
+              <title>Quote #{stringId} | Filosofiskaeleonora.se</title>
+            </Helmet>
+            <Stack
+              key={id}
+              className="home col-md-5 mx-auto"
+              direction="horizontal"
+              gap={3}
+            >
+              <h1>
+                <strong>
+                  <em>{quote}</em>
+                </strong>
+              </h1>
+            </Stack>
+          </>
+        );
+      })}
+      <Link key={0} to="/all" aria-label="All quotes"></Link>
       {Quotes?.map(({ id }) => {
-        return <Link key={id} to={`/${id}`}></Link>;
+        return <Link key={id} to={`/${id}`} aria-label={`Quote #${id}`}></Link>;
       })}
     </div>
   );

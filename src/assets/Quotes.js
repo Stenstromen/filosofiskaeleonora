@@ -89,4 +89,4 @@ const Quotes = [
   },
 ];
 
-export default Quotes;
+module.exports = Quotes;
