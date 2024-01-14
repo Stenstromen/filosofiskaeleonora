@@ -3,11 +3,14 @@ const fs = require("fs");
 const path = require("path");
 
 const createRedirectsContent = (quotes) => {
-  let redirectsContent = "/all/    /all    301!\n";
+  let redirectsContent = "";
 
+  redirectsContent += "/all/    /all    301!\n";
   quotes.forEach((quote) => {
     redirectsContent += `/${quote.id}/    /${quote.id}    301!\n`;
   });
+
+  redirectsContent += "/*    /:splat    301!\n";
 
   return redirectsContent;
 };
