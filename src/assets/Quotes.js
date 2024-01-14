@@ -75,17 +75,24 @@ const Quotes = [
   {
     id: 15,
     quote: "De ville ha en unicorn, men jag kanske kan leverera en pony",
-    date: "2023-06-17"
+    date: "2023-06-17",
   },
   {
     id: 16,
-    quote: "Allt ska vara som en mikrodos nuförtiden. En line of code ska göra en hel applikation",
-    date: "2023-06-20"
+    quote:
+      "Allt ska vara som en mikrodos nuförtiden. En line of code ska göra en hel applikation",
+    date: "2023-06-20",
   },
   {
     id: 17,
     quote: "GIT-pulla din skit nu!",
-    date: "2023-12-29"
+    date: "2023-12-29",
+  },
+  {
+    id: 18,
+    quote:
+      "Om någon säger 'vulnerable' (på TikTok) mer än två gånger, då scrollar jag förbi.",
+    date: "2024-01-14",
   },
 ];
 
