@@ -94,6 +94,12 @@ const Quotes = [
       "Om någon säger 'vulnerable' (på TikTok) mer än två gånger, då scrollar jag förbi.",
     date: "2024-01-14",
   },
+  {
+    id: 19,
+    quote:
+      "Samma pandemier och krig varje generation. Som att någon startar om The Sims.",
+    date: "2024-01-28",
+  },
 ];
 
 module.exports = Quotes;
