@@ -13,7 +13,7 @@
     "react-helmet": "^6.1.0",
     "react-router": "^6.4.3",
     "react-router-dom": "^6.4.3",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "reactSnap": {
@@ -46,6 +46,6 @@
   },
   "devDependencies": {
     "purgecss": "^5.0.0",
-    "react-snap": "^1.23.0"
+    "react-snap": "^1.13.1"
   }
 }
