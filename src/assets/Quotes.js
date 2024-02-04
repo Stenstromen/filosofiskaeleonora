@@ -100,6 +100,11 @@ const Quotes = [
       "Samma pandemier och krig varje generation. Som att någon startar om The Sims.",
     date: "2024-01-28",
   },
+  {
+    id: 20,
+    quote: "Du är som en Pokémon-samlare. Alla yrken, gotta catch 'em all",
+    date: "2024-02-04",
+  },
 ];
 
 module.exports = Quotes;
