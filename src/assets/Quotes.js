@@ -105,6 +105,11 @@ const Quotes = [
     quote: "Du är som en Pokémon-samlare. Alla yrken, gotta catch 'em all",
     date: "2024-02-04",
   },
+  {
+    id: 21,
+    quote: "Du får inget diplom i handen bara för att du dyker upp",
+    date: "2024-02-09",
+  },
 ];
 
 module.exports = Quotes;
