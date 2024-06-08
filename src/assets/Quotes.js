@@ -110,6 +110,21 @@ const Quotes = [
     quote: "Du får inget diplom i handen bara för att du dyker upp",
     date: "2024-02-09",
   },
+  {
+    id: 22,
+    quote: "Jag älskar att livet är typ att flytta papperskassar från ett ställe till ett annat",    
+    date: "2024-04-19",
+  },
+  {
+    id: 23,
+    quote: "När ska fan pita-i-parken öppna?!?!",
+    date: "2024-06-06",
+  },
+  {
+    id: 24,
+    quote: "Hur många sånna där 'shawshank' (Dvorak) tangentbord har du??",
+    date: "2024-06-07",
+  }
 ];
 
 module.exports = Quotes;
