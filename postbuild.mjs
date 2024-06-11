@@ -1,7 +1,10 @@
-/* eslint-disable no-undef */
-const fs = require("fs");
-const path = require("path");
-const quotes = require("./src/assets/Quotes.js");
+import fs from 'fs';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import quotes from './src/assets/Quotes.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const buildDir = path.join(__dirname, "build");
 
@@ -10,7 +13,7 @@ const allIndexPath = path.join(allPath, "index.html");
 const newAllPath = path.join(buildDir, "all.html");
 
 fs.renameSync(allIndexPath, newAllPath);
-fs.rmdirSync(allPath, { recursive: true });
+fs.rmSync(allPath, { recursive: true });
 
 quotes.forEach((quote) => {
   const id = quote.id.toString();
@@ -19,7 +22,7 @@ quotes.forEach((quote) => {
   const newFilePath = path.join(buildDir, `${id}.html`);
 
   fs.renameSync(indexPath, newFilePath);
-  fs.rmdirSync(quotePath, { recursive: true });
+  fs.rmSync(quotePath, { recursive: true });
 });
 
 console.log("Post-build processing completed.");

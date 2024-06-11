@@ -127,4 +127,6 @@ const Quotes = [
   }
 ];
 
-module.exports = Quotes;
+//module.exports = Quotes;
+
+export default Quotes;
