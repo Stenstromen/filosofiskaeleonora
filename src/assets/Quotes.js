@@ -128,7 +128,7 @@ const Quotes = [
   },
   {
     id: 25,
-    quote: "Du är het, men inte 100 graders",
+    quote: "Du är het, men inte 100 grader het ;)",
     date: "2024-07-12",
   },
 ];
