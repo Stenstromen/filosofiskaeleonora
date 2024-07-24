@@ -112,7 +112,8 @@ const Quotes = [
   },
   {
     id: 22,
-    quote: "Jag älskar att livet är typ att flytta papperskassar från ett ställe till ett annat",    
+    quote:
+      "Jag älskar att livet är typ att flytta papperskassar från ett ställe till ett annat",
     date: "2024-04-19",
   },
   {
@@ -124,7 +125,12 @@ const Quotes = [
     id: 24,
     quote: "Hur många sånna där 'shawshank' (Dvorak) tangentbord har du??",
     date: "2024-06-07",
-  }
+  },
+  {
+    id: 25,
+    quote: "Du är het, men inte 100 graders",
+    date: "2024-07-12",
+  },
 ];
 
 //module.exports = Quotes;
