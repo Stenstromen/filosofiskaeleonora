@@ -131,6 +131,11 @@ const Quotes = [
     quote: "Du är het, men inte 100 grader het ;)",
     date: "2024-07-12",
   },
+  {
+    id: 26,
+    quote: "Genier är knepiga",
+    date: "2024-09-10",
+  },
 ];
 
 //module.exports = Quotes;
