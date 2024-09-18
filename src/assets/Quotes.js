@@ -138,6 +138,4 @@ const Quotes = [
   },
 ];
 
-//module.exports = Quotes;
-
 export default Quotes;
