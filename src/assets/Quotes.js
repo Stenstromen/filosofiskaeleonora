@@ -136,6 +136,12 @@ const Quotes = [
     quote: "Genier är knepiga",
     date: "2024-09-10",
   },
+  {
+    id: 27,
+    quote:
+      "Du behöver glasögon för din hjärna, det är inte ditt fel att du ser suddigt",
+    date: "2024-11-01",
+  },
 ];
 
 export default Quotes;
