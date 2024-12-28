@@ -142,6 +142,11 @@ const Quotes = [
       "Du behöver glasögon för din hjärna, det är inte ditt fel att du ser suddigt",
     date: "2024-11-01",
   },
+  {
+    id: 28,
+    quote: "Det finns ingen drink i världen som smakar bättre än din hälsa",
+    date: "2024-12-28",
+  },
 ];
 
 export default Quotes;
