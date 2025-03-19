@@ -5,6 +5,10 @@ updates:
     schedule:
       interval: "weekly"
     ignore:
+      - dependency-name: "react"
+        versions: [">=18.2.0"]
+      - dependency-name: "react-dom"
+        versions: [">=18.2.0"]
       - dependency-name: "react-router"
         versions: [">=6.22.0"]
       - dependency-name: "react-router-dom"
