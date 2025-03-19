@@ -20,10 +20,9 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "npm install --no-package-lock && vite build",
     "serve": "vite preview",
-    "postbuild": "purgecss --config purgecss.config.cjs && node postbuild.mjs",
-    "install": "npm install --legacy-peer-deps"
+    "postbuild": "purgecss --config purgecss.config.cjs && node postbuild.mjs"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.3",
