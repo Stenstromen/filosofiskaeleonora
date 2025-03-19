@@ -6,8 +6,8 @@ import Quotes from "./src/assets/Quotes";
 import fs from 'fs';
 import { minify } from "html-minifier-terser";
 
-// Helper function to create quote HTML
-const createQuoteHtml = (quote) => {
+// Helper function to create quote HTML - dynamically gets asset paths
+const createQuoteHtml = (quote, cssPath, jsPath) => {
   return `
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +26,8 @@ const createQuoteHtml = (quote) => {
     <link rel="apple-touch-icon" href="/pusheen-cat.png" />
     <link rel="manifest" href="/manifest.json" />
     <title>Quote #${quote.id} | Filosofiskaeleonora.se</title>
-    <script type="module" crossorigin src="/assets/index-f6WttCLI.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Dhrz-1CD.css">
+    <script type="module" crossorigin src="${jsPath}"></script>
+    <link rel="stylesheet" crossorigin href="${cssPath}">
     <meta property="og:title" content="Quote #${quote.id} | Filosofiskaeleonora.se" />
     <meta property="og:description" content="${quote.quote}" />
   </head>
@@ -51,7 +51,7 @@ const createQuoteHtml = (quote) => {
 };
 
 // Helper function to create the all quotes HTML
-const createAllQuotesHtml = () => {
+const createAllQuotesHtml = (cssPath, jsPath) => {
   const quotesHtml = Quotes.map(quote => 
     `<div class="col mb-4">
       <div class="card h-100 bg-light">
@@ -81,8 +81,8 @@ const createAllQuotesHtml = () => {
     <link rel="apple-touch-icon" href="/pusheen-cat.png" />
     <link rel="manifest" href="/manifest.json" />
     <title>All Quotes | Filosofiskaeleonora.se</title>
-    <script type="module" crossorigin src="/assets/index-f6WttCLI.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Dhrz-1CD.css">
+    <script type="module" crossorigin src="${jsPath}"></script>
+    <link rel="stylesheet" crossorigin href="${cssPath}">
     <meta property="og:title" content="All Quotes | Filosofiskaeleonora.se" />
     <meta property="og:description" content="All quotes from Filosofiska Eleonora" />
   </head>
@@ -113,16 +113,30 @@ const minifyHtml = (html) => {
   });
 };
 
+// Function to find asset paths in the build directory
+const findAssetPaths = (buildDir) => {
+  try {
+    const assetsDir = path.join(buildDir, 'assets');
+    const files = fs.readdirSync(assetsDir);
+    
+    const cssFile = files.find(file => file.endsWith('.css'));
+    const jsFile = files.find(file => file.endsWith('.js'));
+    
+    return {
+      cssPath: cssFile ? `/assets/${cssFile}` : '',
+      jsPath: jsFile ? `/assets/${jsFile}` : ''
+    };
+  } catch (err) {
+    console.error('Error finding asset paths:', err);
+    return { cssPath: '', jsPath: '' };
+  }
+};
+
 export default defineConfig(() => {
   return {
     build: {
       outDir: "build",
-      emptyOutDir: true,
-      rollupOptions: {
-        output: {
-          manualChunks: undefined
-        }
-      }
+      emptyOutDir: true
     },
     plugins: [
       react(),
@@ -133,27 +147,34 @@ export default defineConfig(() => {
           sequential: true,
           order: 'post',
           handler: async () => {
-            const buildDir = path.resolve(__dirname, 'build');
-            
-            // Create home page with random quote
-            const randomQuote = Quotes[Math.floor(Math.random() * Quotes.length)];
-            const homeContent = createQuoteHtml(randomQuote);
-            const minifiedHome = await minifyHtml(homeContent);
-            fs.writeFileSync(path.join(buildDir, 'index.html'), minifiedHome);
-            console.log(`Created pre-rendered home page with quote #${randomQuote.id}`);
-            
-            // Create all quotes page
-            const allContent = createAllQuotesHtml();
-            const minifiedAll = await minifyHtml(allContent);
-            fs.writeFileSync(path.join(buildDir, 'all.html'), minifiedAll);
-            console.log(`Created pre-rendered all.html`);
-            
-            // Create individual quote pages
-            for (const quote of Quotes) {
-              const content = createQuoteHtml(quote);
-              const minified = await minifyHtml(content);
-              fs.writeFileSync(path.join(buildDir, `${quote.id}.html`), minified);
-              console.log(`Created pre-rendered ${quote.id}.html with quote content`);
+            try {
+              const buildDir = path.resolve(__dirname, 'build');
+              const { cssPath, jsPath } = findAssetPaths(buildDir);
+              
+              console.log(`Found asset paths - CSS: ${cssPath}, JS: ${jsPath}`);
+              
+              // Create home page with random quote
+              const randomQuote = Quotes[Math.floor(Math.random() * Quotes.length)];
+              const homeContent = createQuoteHtml(randomQuote, cssPath, jsPath);
+              const minifiedHome = await minifyHtml(homeContent);
+              fs.writeFileSync(path.join(buildDir, 'index.html'), minifiedHome);
+              console.log(`Created pre-rendered home page with quote #${randomQuote.id}`);
+              
+              // Create all quotes page
+              const allContent = createAllQuotesHtml(cssPath, jsPath);
+              const minifiedAll = await minifyHtml(allContent);
+              fs.writeFileSync(path.join(buildDir, 'all.html'), minifiedAll);
+              console.log(`Created pre-rendered all.html`);
+              
+              // Create individual quote pages
+              for (const quote of Quotes) {
+                const content = createQuoteHtml(quote, cssPath, jsPath);
+                const minified = await minifyHtml(content);
+                fs.writeFileSync(path.join(buildDir, `${quote.id}.html`), minified);
+                console.log(`Created pre-rendered ${quote.id}.html with quote content`);
+              }
+            } catch (err) {
+              console.error('Error in prerendering plugin:', err);
             }
           }
         }

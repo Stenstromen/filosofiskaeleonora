@@ -3,28 +3,31 @@
   "version": "0.1.0",
   "type": "module",
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.3",
+    "bootstrap": "^5.2.3",
     "html-minifier": "^4.0.0",
     "html-minifier-terser": "^7.2.0",
-    "bootstrap": "^5.2.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-router": "^7.1.3",
-    "react-router-dom": "^7.1.3",
+    "react-router": "^6.22.0",
+    "react-router-dom": "^6.22.0",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "postbuild": "purgecss --config purgecss.config.cjs && node postbuild.mjs"
+    "postbuild": "purgecss --config purgecss.config.cjs && node postbuild.mjs",
+    "install": "npm install --legacy-peer-deps"
   },
   "devDependencies": {
-    "purgecss": "^7.0.2",
-    "vite": "^6.0.7",
-    "@vitejs/plugin-react": "^4.3.3"
+    "@vitejs/plugin-react": "^4.3.3",
+    "purgecss": "^5.0.0",
+    "vite": "^5.1.6"
   }
 }
