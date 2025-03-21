@@ -147,6 +147,11 @@ const Quotes = [
     quote: "Det finns ingen drink i världen som smakar bättre än din hälsa",
     date: "2024-12-28",
   },
+  {
+    id: 29,
+    quote: "Jag kan prata med en vägg, jag kan prata med arbetsförmedlingen. Resultatet kommer vara detsamma",
+    date: "2025-03-20",
+  },
 ];
 
 export default Quotes;
