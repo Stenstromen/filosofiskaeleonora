@@ -149,8 +149,19 @@ const Quotes = [
   },
   {
     id: 29,
-    quote: "Jag kan prata med en vägg, jag kan prata med arbetsförmedlingen. Resultatet kommer vara detsamma",
+    quote:
+      "Jag kan prata med en vägg, jag kan prata med arbetsförmedlingen. Resultatet kommer vara detsamma",
     date: "2025-03-20",
+  },
+  {
+    id: 30,
+    quote: "Hur ska man va fin i den här fula världen?",
+    date: "2025-03-24",
+  },
+  {
+    id: 31,
+    quote: "Varför kan inte fina saker vara billiga?",
+    date: "2025-03-24",
   },
 ];
 
