@@ -163,6 +163,11 @@ const Quotes = [
     quote: "Varför kan inte fina saker vara billiga?",
     date: "2025-03-24",
   },
+  {
+    id: 32,
+    quote: "Jag tror att jag ska göra en kurs i hur man äter med bestick också",
+    date: "2025-03-31",
+  },
 ];
 
 export default Quotes;
