@@ -168,6 +168,11 @@ const Quotes = [
     quote: "Jag tror att jag ska göra en kurs i hur man äter med bestick också",
     date: "2025-03-31",
   },
+  {
+    id: 33,
+    quote: "Sverige innan Internet var helt fucking boring",
+    date: "2025-04-04",
+  },
 ];
 
 export default Quotes;
