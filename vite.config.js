@@ -132,53 +132,77 @@ const findAssetPaths = (buildDir) => {
   }
 };
 
-export default defineConfig(() => {
+export default defineConfig(({ command, mode }) => {
+  // Check if we're running in test mode
+  const isTest = mode === 'test';
+  
+  // Only include the pre-rendering plugin if not in test mode
+  const plugins = [react()];
+  
+  if (!isTest) {
+    plugins.push({
+      name: 'generate-prerendered-files',
+      closeBundle: {
+        sequential: true,
+        order: 'post',
+        handler: async () => {
+          try {
+            const buildDir = path.resolve(__dirname, 'build');
+            const { cssPath, jsPath } = findAssetPaths(buildDir);
+            
+            console.log(`Found asset paths - CSS: ${cssPath}, JS: ${jsPath}`);
+            
+            // Create home page with random quote
+            const randomQuote = Quotes[Math.floor(Math.random() * Quotes.length)];
+            const homeContent = createQuoteHtml(randomQuote, cssPath, jsPath);
+            const minifiedHome = await minifyHtml(homeContent);
+            fs.writeFileSync(path.join(buildDir, 'index.html'), minifiedHome);
+            console.log(`Created pre-rendered home page with quote #${randomQuote.id}`);
+            
+            // Create all quotes page
+            const allContent = createAllQuotesHtml(cssPath, jsPath);
+            const minifiedAll = await minifyHtml(allContent);
+            fs.writeFileSync(path.join(buildDir, 'all.html'), minifiedAll);
+            console.log(`Created pre-rendered all.html`);
+            
+            // Create individual quote pages
+            for (const quote of Quotes) {
+              const content = createQuoteHtml(quote, cssPath, jsPath);
+              const minified = await minifyHtml(content);
+              fs.writeFileSync(path.join(buildDir, `${quote.id}.html`), minified);
+              console.log(`Created pre-rendered ${quote.id}.html with quote content`);
+            }
+          } catch (err) {
+            console.error('Error in prerendering plugin:', err);
+          }
+        }
+      }
+    });
+  }
+
   return {
     build: {
       outDir: "build",
       emptyOutDir: true
     },
-    plugins: [
-      react(),
-      // Generate pre-rendered HTML files for every route after build
-      {
-        name: 'generate-prerendered-files',
-        closeBundle: {
-          sequential: true,
-          order: 'post',
-          handler: async () => {
-            try {
-              const buildDir = path.resolve(__dirname, 'build');
-              const { cssPath, jsPath } = findAssetPaths(buildDir);
-              
-              console.log(`Found asset paths - CSS: ${cssPath}, JS: ${jsPath}`);
-              
-              // Create home page with random quote
-              const randomQuote = Quotes[Math.floor(Math.random() * Quotes.length)];
-              const homeContent = createQuoteHtml(randomQuote, cssPath, jsPath);
-              const minifiedHome = await minifyHtml(homeContent);
-              fs.writeFileSync(path.join(buildDir, 'index.html'), minifiedHome);
-              console.log(`Created pre-rendered home page with quote #${randomQuote.id}`);
-              
-              // Create all quotes page
-              const allContent = createAllQuotesHtml(cssPath, jsPath);
-              const minifiedAll = await minifyHtml(allContent);
-              fs.writeFileSync(path.join(buildDir, 'all.html'), minifiedAll);
-              console.log(`Created pre-rendered all.html`);
-              
-              // Create individual quote pages
-              for (const quote of Quotes) {
-                const content = createQuoteHtml(quote, cssPath, jsPath);
-                const minified = await minifyHtml(content);
-                fs.writeFileSync(path.join(buildDir, `${quote.id}.html`), minified);
-                console.log(`Created pre-rendered ${quote.id}.html with quote content`);
-              }
-            } catch (err) {
-              console.error('Error in prerendering plugin:', err);
-            }
-          }
+    plugins,
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: ['./src/setupTests.js'],
+      environmentOptions: {
+        jsdom: {
+          // Silence React key warning messages during tests
+          logLevel: 'silent',
         }
+      },
+      onConsoleLog(log) {
+        // Filter out React key warning messages
+        if (log.includes('Warning: Each child in a list should have a unique "key" prop')) {
+          return false;
+        }
+        return true;
       }
-    ],
+    }
   };
 });
