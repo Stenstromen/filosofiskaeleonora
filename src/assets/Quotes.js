@@ -173,6 +173,12 @@ const Quotes = [
     quote: "Sverige innan Internet var helt fucking boring",
     date: "2025-04-04",
   },
+  {
+    id: 34,
+    quote:
+      "Om man är en god medborgare och lyssnar på vad alla säger, så blir man fucked",
+    date: "2025-04-07",
+  },
 ];
 
 export default Quotes;
