@@ -179,6 +179,22 @@ const Quotes = [
       "Om man är en god medborgare och lyssnar på vad alla säger, så blir man fucked",
     date: "2025-04-07",
   },
+  {
+    id: 35,
+    quote: "Bara Arbetsförmedlingen kan förstöra en dag som denna",
+    date: "2025-04-11",
+  },
+  {
+    id: 36,
+    quote:
+      "Är man snäll, blir man överkörd. Om man gapar, då får man någonting",
+    date: "2025-04-11",
+  },
+  {
+    id: 37,
+    quote: "Jag föddes för att tillföra kaos, och bryta lite regler",
+    date: "2025-04-11",
+  },
 ];
 
 export default Quotes;
