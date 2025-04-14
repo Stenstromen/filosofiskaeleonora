@@ -195,6 +195,16 @@ const Quotes = [
     quote: "Jag föddes för att tillföra kaos, och bryta lite regler",
     date: "2025-04-11",
   },
+  {
+    id: 38,
+    quote: "När alla är lika missnöjda, då är demokrati uppnådd",
+    date: "2025-04-12",
+  },
+  {
+    id: 39,
+    quote: "Att lita på andra människor är en jävla dödstöt",
+    date: "2025-04-12",
+  },
 ];
 
 export default Quotes;
