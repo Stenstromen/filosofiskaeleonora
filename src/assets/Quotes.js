@@ -205,6 +205,11 @@ const Quotes = [
     quote: "Att lita på andra människor är en jävla dödstöt",
     date: "2025-04-12",
   },
+  {
+    id: 40,
+    quote: "Det straffar sig utseendemässigt att leva som en crackhead",
+    date: "2025-04-22",
+  },
 ];
 
 export default Quotes;
