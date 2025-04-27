@@ -5,6 +5,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: ":arrow_up: upgrade:"
     ignore:
       - dependency-name: "react"
         versions: [">=18.2.0"]
