@@ -19,4 +19,4 @@ updates:
       - dependency-name: "purgecss"
         versions: [">=5.0.0"]
       - dependency-name: "vite"
-        versions: [">=5.1.6"]
+        versions: [">=5.4.18"]
