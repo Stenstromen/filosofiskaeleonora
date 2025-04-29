@@ -210,6 +210,16 @@ const Quotes = [
     quote: "Det straffar sig utseendemässigt att leva som en crackhead",
     date: "2025-04-22",
   },
+  {
+    id: 41,
+    quote: "I don't have bad luck, just bad",
+    date: "2025-04-29",
+  },
+  {
+    id: 42,
+    quote: "375kr för 30ml? Damn, you better work bitch",
+    date: "2025-04-29",
+  },
 ];
 
 export default Quotes;
