@@ -220,6 +220,21 @@ const Quotes = [
     quote: "375kr för 30ml? Damn, you better work bitch",
     date: "2025-04-29",
   },
+  {
+    id: 43,
+    quote: "Det är ok att säga farväl till saker som pajar",
+    date: "2025-04-30",
+  },
+  {
+    id: 44,
+    quote: "Vill man ha något gott så får man fan göra det själv",
+    date: "2025-05-04",
+  },
+  {
+    id: 45,
+    quote: "Varje dag är sitt eget problem",
+    date: "2025-05-19",
+  },
 ];
 
 export default Quotes;
