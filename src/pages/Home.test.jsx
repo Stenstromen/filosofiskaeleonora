@@ -2,10 +2,19 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import Home from "./Home";
 import Quotes from "../assets/Quotes";
+import React from "react";
 
-// Mock react-helmet to avoid warnings/errors
+// Mock react-helmet to properly extract title content for testing
 vi.mock("react-helmet", () => ({
-  Helmet: ({ children }) => <div data-testid="helmet">{children}</div>,
+  Helmet: ({ children }) => {
+    // Extract the title content from children
+    const titleElement = React.Children.toArray(children).find(
+      child => child?.type === 'title'
+    );
+    const titleContent = titleElement?.props?.children || '';
+    
+    return <div data-testid="helmet">{titleContent}</div>;
+  },
 }));
 
 // Mock the React Router hooks
@@ -39,7 +48,7 @@ describe("Home component", () => {
 
     // Assert that the title contains the quote number
     expect(screen.getByTestId("helmet")).toHaveTextContent(
-      `Quote #${latestQuote.id}`
+      `Quote #${latestQuote.id} | Filosofiskaeleonora.se`
     );
   });
 });
