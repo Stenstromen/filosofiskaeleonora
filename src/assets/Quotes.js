@@ -235,6 +235,12 @@ const Quotes = [
     quote: "Varje dag är sitt eget problem",
     date: "2025-05-19",
   },
+  {
+    id: 46,
+    quote:
+      "Hela det här med att 'plugga' är en jävla fasad för oss fattiga människor",
+    date: "2025-06-14",
+  },
 ];
 
 export default Quotes;
