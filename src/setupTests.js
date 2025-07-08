@@ -5,7 +5,7 @@
 import '@testing-library/jest-dom';
 
 // This adds the expect method from vitest to the global scope
-import { expect, afterEach, beforeAll } from 'vitest';
+import { afterEach, beforeAll } from 'vitest';
 import { cleanup } from '@testing-library/react';
 
 // Runs a cleanup after each test case to ensure a clean environment

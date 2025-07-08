@@ -22,7 +22,9 @@
     "build": "npm install --no-package-lock && vite build",
     "serve": "vite preview",
     "test": "vitest run",
-    "postbuild": "purgecss --config purgecss.config.cjs && node postbuild.mjs"
+    "postbuild": "purgecss --config purgecss.config.cjs && node postbuild.mjs",
+    "lint": "eslint . --ext .js,.jsx",
+    "lint:fix": "eslint . --ext .js,.jsx --fix"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
@@ -35,6 +37,11 @@
     "jsdom": "^26.1.0",
     "purgecss": "^6.0.0",
     "vite": "^7.0.0",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "@eslint/create-config": "^1.9.0",
+    "@eslint/js": "^9.30.1",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0"
   }
 }

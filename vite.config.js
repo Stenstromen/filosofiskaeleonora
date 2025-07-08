@@ -132,7 +132,7 @@ const findAssetPaths = (buildDir) => {
   }
 };
 
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
   // Check if we're running in test mode
   const isTest = mode === 'test';
   
