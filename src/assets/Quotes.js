@@ -241,6 +241,21 @@ const Quotes = [
       "Hela det här med att 'plugga' är en jävla fasad för oss fattiga människor",
     date: "2025-06-14",
   },
+  {
+    id: 47,
+    quote: "Jag har så mycket kreativt hat att ge",
+    date: "2025-07-20",
+  },
+  {
+    id: 48,
+    quote: "Världen gillar inte en arg kvinna",
+    date: "2025-07-20",
+  },
+  {
+    id: 49,
+    quote: "När man föds är man en främling till sina föräldrar",
+    date: "2025-07-24",
+  },
 ];
 
 export default Quotes;
