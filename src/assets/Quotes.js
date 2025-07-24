@@ -256,6 +256,11 @@ const Quotes = [
     quote: "När man föds är man en främling till sina föräldrar",
     date: "2025-07-24",
   },
+  {
+    id: 50,
+    quote: "Du hatar allting, and I love you for it!",
+    date: "2025-07-25",
+  },
 ];
 
 export default Quotes;
