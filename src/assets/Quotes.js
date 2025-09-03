@@ -261,6 +261,11 @@ const Quotes = [
     quote: "Du hatar allting, and I love you for it!",
     date: "2025-07-25",
   },
+  {
+    id: 51,
+    quote: "Varför är män så fucking cringe?",
+    date: "2025-08-30",
+  },
 ];
 
 export default Quotes;
