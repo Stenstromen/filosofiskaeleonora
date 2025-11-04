@@ -266,6 +266,11 @@ const Quotes = [
     quote: "Varför är män så fucking cringe?",
     date: "2025-08-30",
   },
+  {
+    id: 52,
+    quote: "Du ska vara en guldklimp, men vi vill betala för en kolbit",
+    date: "2025-11-04",
+  },
 ];
 
 export default Quotes;
