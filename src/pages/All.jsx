@@ -1,13 +1,12 @@
 import { Stack, Table } from "react-bootstrap";
-import { Helmet } from "react-helmet";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import Quotes from "../assets/Quotes";
 
 function All() {
+  useDocumentTitle("Quotes | Filosofiskaeleonora.se");
+  
   return (
     <div>
-      <Helmet>
-        <title>Quotes | Filosofiskaeleonora.se</title>
-      </Helmet>
       <Stack className="all col-md-5 mx-auto" direction="horizontal" gap={3}>
         <Table striped bordered hover variant="dark">
           <thead>
