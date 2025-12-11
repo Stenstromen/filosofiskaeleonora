@@ -3,18 +3,23 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import Home from "./Home";
 import Quotes from "../assets/Quotes";
-import React from "react";
+import React, { useEffect } from "react";
 
-// Mock react-helmet to properly extract title content for testing
-vi.mock("react-helmet", () => ({
-  Helmet: ({ children }) => {
-    // Extract the title content from children
-    const titleElement = React.Children.toArray(children).find(
-      child => child?.type === 'title'
-    );
-    const titleContent = titleElement?.props?.children || '';
-    
-    return <div data-testid="helmet">{titleContent}</div>;
+// Mock useDocumentTitle hook to verify title is set correctly
+vi.mock("../hooks/useDocumentTitle", () => ({
+  useDocumentTitle: (title) => {
+    // Store the title in a way we can test
+    useEffect(() => {
+      const titleDiv = document.createElement("div");
+      titleDiv.setAttribute("data-testid", "helmet");
+      titleDiv.textContent = title;
+      document.body.appendChild(titleDiv);
+      
+      return () => {
+        const existing = document.querySelector('[data-testid="helmet"]');
+        if (existing) existing.remove();
+      };
+    }, [title]);
   },
 }));
 

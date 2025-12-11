@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import Stack from "react-bootstrap/Stack";
 import Quotes from "../assets/Quotes";
 
@@ -35,30 +35,30 @@ function Home() {
     }
   }, [isLoading, isValidId, navigate]);
 
+  // Set document title based on the current quote
+  const title = quote.length > 0 
+    ? `Quote #${quote[0].id} | Filosofiskaeleonora.se`
+    : "Filosofiskaeleonora.se";
+  useDocumentTitle(title);
+
   if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>
       {quote.map(({ id, quote }) => {
-        const stringId = id.toString();
         return (
-          <>
-            <Helmet>
-              <title>Quote #{stringId} | Filosofiskaeleonora.se</title>
-            </Helmet>
-            <Stack
-              key={id}
-              className="home col-md-5 mx-auto"
-              direction="horizontal"
-              gap={3}
-            >
-              <h1>
-                <strong>
-                  <em>{quote}</em>
-                </strong>
-              </h1>
-            </Stack>
-          </>
+          <Stack
+            key={id}
+            className="home col-md-5 mx-auto"
+            direction="horizontal"
+            gap={3}
+          >
+            <h1>
+              <strong>
+                <em>{quote}</em>
+              </strong>
+            </h1>
+          </Stack>
         );
       })}
       <Link key={0} to="/all" aria-label="All quotes"></Link>
