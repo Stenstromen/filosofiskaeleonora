@@ -1,3 +1,7 @@
+body {
+  background-color: #ffefc4;
+}
+
 .app {
   background-image: url("img/pusheen.webp");
   background-repeat: no-repeat;

@@ -17,7 +17,7 @@
     "react-router-dom": "^7.10.1"
   },
   "scripts": {
-    "start": "vite",
+    "start": "vite --host",
     "build": "npm install --no-package-lock && vite build",
     "serve": "vite preview",
     "test": "vitest run",

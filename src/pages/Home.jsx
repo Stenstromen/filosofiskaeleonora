@@ -18,6 +18,7 @@ function Home() {
 
     if (id) {
       singleQuote = Quotes.find((item) => item.id === parseInt(id));
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsValidId(!!singleQuote);
     } else {
       const randomNum = Math.floor(Quotes.length * Math.random());
