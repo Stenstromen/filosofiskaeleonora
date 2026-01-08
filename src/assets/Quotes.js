@@ -271,6 +271,16 @@ const Quotes = [
     quote: "Du ska vara en guldklimp, men vi vill betala för en kolbit",
     date: "2025-11-04",
   },
+  {
+    id: 53,
+    quote: "Det här samhället kan inte tämja mig",
+    date: "2026-01-08",
+  },
+  {
+    id: 54,
+    quote: "Mitt i natten är min peaceful time",
+    date: "2026-01-08",
+  },
 ];
 
 export default Quotes;
