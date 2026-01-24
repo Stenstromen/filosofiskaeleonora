@@ -281,6 +281,11 @@ const Quotes = [
     quote: "Mitt i natten är min peaceful time",
     date: "2026-01-08",
   },
+  {
+    id: 55,
+    quote: "Inget 'syfte' betyder också inga 'krav'",
+    date: "2026-01-23",
+  },
 ];
 
 export default Quotes;
