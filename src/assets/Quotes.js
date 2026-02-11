@@ -286,6 +286,16 @@ const Quotes = [
     quote: "Inget 'syfte' betyder också inga 'krav'",
     date: "2026-01-23",
   },
+  {
+    id: 56,
+    quote: "Det är jobbigt att ha problem",
+    date: "2026-02-06",
+  },
+  {
+    id: 57,
+    quote: "Ingen människa kan ha samma bra personlighet som en hund",
+    date: "2026-02-11",
+  },
 ];
 
 export default Quotes;
