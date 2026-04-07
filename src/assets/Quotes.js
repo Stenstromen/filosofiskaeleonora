@@ -296,6 +296,21 @@ const Quotes = [
     quote: "Ingen människa kan ha samma bra personlighet som en hund",
     date: "2026-02-11",
   },
+  {
+    id: 58,
+    quote: "Allt man ger tar också av en själv",
+    date: "2026-03-09",
+  },
+  {
+    id: 59,
+    quote: "Är de mjuka på utsidan, så är de mjuka på insidan",
+    date: "2026-03-10",
+  },
+  {
+    id: 60,
+    quote: "Ibland är peace and quiet den bästa middagen",
+    date: "2026-04-02",
+  },
 ];
 
 export default Quotes;
