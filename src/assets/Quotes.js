@@ -311,6 +311,12 @@ const Quotes = [
     quote: "Ibland är peace and quiet den bästa middagen",
     date: "2026-04-02",
   },
+  {
+    id: 61,
+    quote:
+      "När man inte trodde att samhället kunde bli värre, så kom det elsparkcyklar",
+    date: "2026-04-24",
+  },
 ];
 
 export default Quotes;
