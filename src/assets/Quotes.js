@@ -317,6 +317,16 @@ const Quotes = [
       "När man inte trodde att samhället kunde bli värre, så kom det elsparkcyklar",
     date: "2026-04-24",
   },
+  {
+    id: 62,
+    quote: "Tillbaka från semestern, men hjärnan är kvar på stranden",
+    date: "2026-07-28",
+  },
+  {
+    id: 63,
+    quote: "Rockstjärnor behöver inte ha tröja på sig",
+    date: "2026-08-02",
+  },
 ];
 
 export default Quotes;
