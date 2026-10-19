@@ -39,7 +39,7 @@
     "vitest": "^4.1.10",
     "@eslint/create-config": "^2.0.0",
     "@eslint/js": "^9.39.1",
-    "eslint": "^9.39.2",
+    "eslint": "^10.8.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1"
   },
