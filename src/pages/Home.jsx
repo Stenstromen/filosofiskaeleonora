@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 import Stack from "react-bootstrap/Stack";
 import Quotes from "../assets/Quotes";

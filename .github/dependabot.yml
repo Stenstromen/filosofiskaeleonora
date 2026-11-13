@@ -7,16 +7,9 @@ updates:
       interval: "weekly"
     commit-message:
       prefix: ":arrow_up: upgrade:"
-#    ignore:
-#      - dependency-name: "react"
-#        versions: [">=18.2.0"]
-#      - dependency-name: "react-dom"
-#        versions: [">=18.2.0"]
-#      - dependency-name: "react-router"
-#        versions: [">=6.22.0"]
-#      - dependency-name: "react-router-dom"
-#        versions: [">=6.22.0"]
-#      - dependency-name: "purgecss"
-#        versions: [">=5.0.0"]
-#      - dependency-name: "vite"
-#        versions: [">=5.4.18"]
+    # eslint-plugin-react still peers eslint ^9 only; ESLint 10 installs fail.
+    ignore:
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@eslint/js"
+        update-types: ["version-update:semver-major"]

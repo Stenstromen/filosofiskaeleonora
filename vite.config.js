@@ -1,10 +1,12 @@
-/* eslint-disable no-undef */
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-import Quotes from "./src/assets/Quotes";
+import Quotes from "./src/assets/Quotes.js";
 import fs from 'fs';
 import { minify } from "html-minifier-terser";
+import { fileURLToPath } from "url";
+
+const __dirname = import.meta.dirname ?? path.dirname(fileURLToPath(import.meta.url));
 
 // Helper function to create quote HTML - dynamically gets asset paths
 const createQuoteHtml = (quote, cssPath, jsPath) => {

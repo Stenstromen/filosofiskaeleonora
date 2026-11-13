@@ -24,7 +24,7 @@ vi.mock("../hooks/useDocumentTitle", () => ({
 }));
 
 // Mock the React Router hooks
-vi.mock("react-router-dom", () => ({
+vi.mock("react-router", () => ({
   useParams: () => {
     // Find the latest quote (with the highest ID) for our test
     const latestQuote = [...Quotes].sort((a, b) => b.id - a.id)[0];
